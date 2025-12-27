@@ -1,0 +1,209 @@
+/* RTL Support Styles - Font imported via HTML preconnect for performance */
+
+/* Cairo Font Metric Overrides for CLS */
+@font-face {
+    font-family: 'Cairo Fallback';
+    src: local('Arial');
+    ascent-override: 95%;
+    descent-override: 25%;
+    line-gap-override: 0%;
+    size-adjust: 105%;
+    font-display: optional;
+}
+
+
+/* Header Updates for Language Toggle */
+.nav-extras {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.language-toggle {
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    transition: var(--transition);
+    border: 2px solid var(--border-color);
+    padding: 5px 10px;
+    border-radius: 8px;
+    width: 40px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-toggle:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: rgba(108, 92, 231, 0.1);
+}
+
+/* Light Mode Language Toggle */
+body.light-mode .language-toggle {
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+body.light-mode .language-toggle:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* RTL Support */
+[lang="ar"] {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Cairo', 'Cairo Fallback', sans-serif;
+}
+
+[lang="ar"] body {
+    font-family: 'Cairo', 'Cairo Fallback', sans-serif;
+}
+
+[lang="ar"] h1,
+[lang="ar"] h2,
+[lang="ar"] h3,
+[lang="ar"] h4 {
+    font-family: 'Cairo', 'Cairo Fallback', sans-serif;
+}
+
+/* Navbar Translation Flip */
+[lang="ar"] .nav-menu {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+[lang="ar"] .theme-toggle {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+[lang="ar"] .nav-item {
+    margin-left: 0;
+}
+
+/* Hero Section RTL */
+[lang="ar"] .hero-container {
+    direction: rtl;
+}
+
+[lang="ar"] .hero-subtitle,
+[lang="ar"] .hero-description {
+    text-align: right;
+}
+
+/* Section Titles */
+[lang="ar"] .section-title::after {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Qualities List */
+[lang="ar"] .qualities-list li {
+    flex-direction: row;
+}
+
+[lang="ar"] .qualities-list li i {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+/* Skill Tags */
+[lang="ar"] .skill-tags {
+    justify-content: flex-start;
+}
+
+/* Project Cards */
+[lang="ar"] .project-content {
+    text-align: right;
+}
+
+[lang="ar"] .project-link i {
+    transform: rotate(180deg);
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+[lang="ar"] .project-link:hover i {
+    transform: translateX(-5px) rotate(180deg);
+}
+
+/* Timeline/Experience */
+[lang="ar"] .timeline::after {
+    left: auto;
+    right: 19px;
+}
+
+[lang="ar"] .timeline-item {
+    padding-left: 0;
+    padding-right: 55px;
+}
+
+[lang="ar"] .timeline-dot {
+    left: auto;
+    right: 10px;
+}
+
+[lang="ar"] .timeline-content {
+    text-align: right;
+}
+
+/* Services */
+[lang="ar"] .service-item {
+    text-align: right;
+}
+
+[lang="ar"] .service-item i {
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Contact Form */
+[lang="ar"] .contact-info {
+    text-align: right;
+}
+
+[lang="ar"] .contact-detail {
+    flex-direction: row;
+}
+
+[lang="ar"] .contact-detail .icon {
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+[lang="ar"] .form-group label {
+    left: auto;
+    right: 15px;
+    transform-origin: right;
+}
+
+[lang="ar"] .form-group input:focus~label,
+[lang="ar"] .form-group input:not(:placeholder-shown)~label,
+[lang="ar"] .form-group textarea:focus~label,
+[lang="ar"] .form-group textarea:not(:placeholder-shown)~label {
+    transform: translateY(-25px) scale(0.8);
+    left: auto;
+    right: 0;
+}
+
+/* Footer */
+[lang="ar"] .footer-content {
+    text-align: center;
+}
+
+/* Mobile Nav RTL */
+@media screen and (max-width: 768px) {
+    [lang="ar"] .nav-menu {
+        left: auto;
+        right: -100%;
+        text-align: center;
+    }
+
+    [lang="ar"] .nav-menu.active {
+        right: 0;
+    }
+}

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Preload Critical Fonts -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2"
+        as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2"
+        as="font" type="font/woff2" crossorigin>
+
+    <!-- Primary Meta Tags -->
+    <meta name="description"
+        content="Portfolio of Abdullah Abdulrab Abdullah altairi - General Software Developer & Full-Stack Engineer. Specialist in Web, Mobile, Backend, Data, and AI."
+        data-i18n="metaDescription">
+    <meta name="keywords"
+        content="عبدالله الطيري, عبدالله عبدالرب الطيري, الطيري ذمار, موقع الطيري, تقنية الطيري, شركة الطيري, Abdullah altairi, Software Developer Yemen, Full-Stack Engineer Saudi Arabia, Web Development Dhamar, Backend Developer KSA, altairi Tech, Freelance Developer Middle East, IT Solutions Yemen">
+    <meta name="author" content="Abdullah Abdulrab Abdullah altairi">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="google-site-verification" content="google3c8c2c28487d0059" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://altairi.netlify.app/">
+
+    <title>عبدالله عبدالرب الطيري | Abdullah altairi | Full-Stack Software Engineer</title>
+
+    <!-- Preload Critical Images -->
+    <link rel="preload" href="profile.webp" as="image" type="image/webp" fetchpriority="high">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="profile.webp">
+    <link rel="apple-touch-icon" href="profile.webp">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://altairi.netlify.app/">
+    <meta property="og:title" content="عبدالله عبدالرب الطيري | Abdullah altairi">
+    <meta property="og:description"
+        content="General Software Developer & Full-Stack Engineer specializing in Web, Mobile, Backend, Data, and AI solutions. Based in Yemen, available for opportunities in Saudi Arabia.">
+    <meta property="og:image" content="https://altairi.netlify.app/profile.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ar_AR">
+    <meta property="og:site_name" content="altairi Portfolio">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://altairi.netlify.app/">
+    <meta name="twitter:title" content="عبدالله عبدالرب الطيري | Abdullah altairi">
+    <meta name="twitter:description"
+        content="General Software Developer & Full-Stack Engineer specializing in Web, Mobile, Backend, Data, and AI solutions.">
+    <meta name="twitter:image" content="https://altairi.netlify.app/profile.webp">
+    <meta name="twitter:creator" content="@yourtwitterhandle">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Abdullah Abdulrab Abdullah altairi",
+      "alternateName": "عبدالله عبدالرب الطيري",
+      "url": "https://altairi.netlify.app",
+      "image": "https://altairi.netlify.app/profile.webp",
+      "sameAs": [
+        "https://github.com/altairi57",
+        "https://youtube.com/@a7ta25t",
+        "https://www.linkedin.com/in/abdullah-altairi"
+      ],
+      "jobTitle": "Full-Stack Software Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "description": "عبدالله عبدالرب الطيري - مطور برمجيات خبير في اليمن والسعودية. متخصص في حلول الويب والموبايل والذكاء الاصطناعي. General Software Developer & Full-Stack Engineer specializing in Web, Mobile, Backend, Data, and AI solutions.",
+      "knowsAbout": ["Web Development", "Mobile Development", "Backend Development", "Database Design", "AI", "Data Processing"],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Telecommunications Engineering / IT"
+      },
+      "email": "qweqweiop57@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dhamar",
+        "addressRegion": "Dhamar Governorate",
+        "addressCountry": "YE"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <!-- Critical CSS (Inlined for Performance) -->
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --bg-alt: #12141c;
+            --primary-color: #00d2d3;
+            --secondary-color: #5c7fe7;
+            --text-color: #e0e6ed;
+            --text-muted: #a0aab5;
+            --accent-glow: rgba(108, 92, 231, 0.4);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --transition: all 0.3s ease;
+            --navbar-bg: rgba(11, 12, 16, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Prevent CLS: Define Hero Grid in Critical CSS */
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-name {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, #b2bec3);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        /* Reserve height for typing effect */
+        .hero-title {
+            font-size: 1.8rem;
+            min-height: 2.8rem;
+            /* Keeps space for two lines or larger fonts */
+            color: #a0aab5;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1/1;
+            margin: 0 auto;
+        }
+
+        .img-container {
+            width: 100%;
+            height: 100%;
+            max-width: 400px;
+            max-height: 400px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-img {
+            width: 95%;
+            height: 95%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+    </style>
+
+    <!-- Font Awesome (Deferred & Optimized) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- Custom CSS (Deferred) -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="style.css">
+    </noscript>
+
+    <link rel="preload" href="rtl-style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="rtl-style.css">
+    </noscript>
+
+    <!-- EmailJS SDK (Deferred) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer>
+    </script>
+
+    <!-- Particles.js (Deferred) -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="loader-circle"></div>
+                <div class="loader-circle"></div>
+                <div class="loader-circle"></div>
+            </div>
+            <div class="loader-text">altairi</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                altairi<span class="dot">.</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link active" data-i18n="navHome">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link" data-i18n="navAbout">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link" data-i18n="navSkills">Skills</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link" data-i18n="navProjects">Projects</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link" data-i18n="navServices">Services</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link btn-contact" data-i18n="navContact">Contact
+                        Me</a></li>
+            </ul>
+            <div class="nav-extras" style="display: flex; align-items: center; gap: 15px;">
+                <div class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </div>
+                <!-- Language Toggle -->
+                <div class="language-toggle" id="language-toggle"
+                    style="cursor: pointer; font-weight: bold; color: var(--text-color);">
+                    AR
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div id="particles-js"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="greeting" data-i18n="heroGreeting">Hello, I'm</span>
+                <h1 class="hero-name" data-i18n="heroName">Abdullah altairi</h1>
+                <h2 class="hero-title"><span class="typing-text"></span><span class="cursor">&nbsp;</span></h2>
+                <p class="hero-subtitle" data-i18n="heroSubtitle">Web • Mobile • Backend • Data • AI</p>
+                <p class="hero-description" data-i18n="heroDescription">
+                    A passionate software developer focused on building reliable, scalable, and high-quality digital
+                    solutions.
+                    Merging academic depth with hands-on professional expertise.
+                </p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary" data-i18n="btnContact">Get in Touch</a>
+                    <a href="#projects" class="btn btn-outline" data-i18n="btnProjects">View Projects</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/altairi57" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abdullah-altairi" target="_blank" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://youtube.com/@a7ta25t?si=S0zFIsxyL9B6CrRT" target="_blank" aria-label="YouTube"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="mailto:qweqweiop57@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="img-container">
+                    <img src="profile.webp" srcset="profile.webp 1x" sizes="(max-width: 768px) 250px, 380px"
+                        alt="Abdullah altairi - Full-Stack Software Engineer and Developer" class="hero-img"
+                        fetchpriority="high" loading="eager" decoding="async" width="380" height="380">
+                </div>
+                <div class="glow-effect"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats section-padding">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-number" data-target="10">0</div>
+                    <div class="stat-label" data-i18n="statProjects">Completed Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-number" data-target="2">0</div>
+                    <div class="stat-label" data-i18n="statYears">Years of Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label" data-i18n="statTech">Technologies</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number" data-target="625">0</div>
+                    <div class="stat-label" data-i18n="statHours">Coding Hours</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <h2 class="section-title" data-i18n="sectionAbout">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="lead-text" data-i18n="aboutLead">I am a general software developer based in Dhamar, Yemen,
+                        actively balancing
+                        university studies with hands-on professional practice.</p>
+                    <p data-i18n="aboutP1">
+                        I possess solid intermediate-level experience that is rapidly progressing toward advanced
+                        proficiency through continuous self-learning and real-world projects.
+                        I believe that great software is built through a deep understanding of problems, attention to
+                        detail, and professional integrity.
+                    </p>
+                    <p data-i18n="aboutP2">
+                        Currently working independently, managing projects from concept to delivery, and preparing to
+                        collaborate within professional development teams. Every project I build is treated with the
+                        same care and responsibility as if it were my own product.
+                    </p>
+
+                    <div class="qualities-box">
+                        <h3 data-i18n="qualitiesTitle">Personal Qualities</h3>
+                        <ul class="qualities-list">
+                            <li data-i18n="quality1"><i class="fas fa-check-circle"></i> Strong perseverance and
+                                discipline</li>
+                            <li data-i18n="quality2"><i class="fas fa-check-circle"></i> Honesty and professional
+                                integrity</li>
+                            <li data-i18n="quality3"><i class="fas fa-check-circle"></i> High work ethic</li>
+                            <li data-i18n="quality4"><i class="fas fa-check-circle"></i> Exceptional attention to detail
+                            </li>
+                            <li data-i18n="quality5"><i class="fas fa-check-circle"></i> Passion for diverse technical
+                                challenges</li>
+                        </ul>
+                    </div>
+
+                    <div class="objective-box">
+                        <h3 data-i18n="objectiveTitle">Career Objective</h3>
+                        <p data-i18n="objectiveText">
+                            My goal is to secure a professional role or freelance opportunities where I can apply and
+                            expand my software development skills.
+                            Aiming to work in the <strong>Kingdom of Saudi Arabia</strong> within the next two years
+                            with leading international technology companies.
+                        </p>
+                    </div>
+                </div>
+                <!-- Optional: Image placeholder or infographic content -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Timeline or Cards) -->
+    <section id="experience" class="experience section-padding bg-alt">
+        <div class="container">
+            <h2 class="section-title" data-i18n="sectionExperience">Experience & Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2023 - Present</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="exp1Role">Freelance Software Developer</h3>
+                        <h4 data-i18n="exp1Type">Self-Employed</h4>
+                        <ul>
+                            <li data-i18n="exp1Desc1">Designed and developed complete software solutions independently.
+                            </li>
+                            <li data-i18n="exp1Desc2">Built and managed relational databases using SQL Server.</li>
+                            <li data-i18n="exp1Desc3">Continuously learned and applied modern programming practices.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Current</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="exp2Role">University Student</h3>
+                        <h4 data-i18n="exp2Type">Telecommunications Engineering / IT</h4>
+                        <ul>
+                            <li data-i18n="exp2Desc1">Combined academic knowledge with practical software development.
+                            </li>
+                            <li data-i18n="exp2Desc2">Applied theoretical concepts to real-world projects.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section-padding">
+        <div class="container">
+            <h2 class="section-title" data-i18n="sectionSkills">Technical Skills</h2>
+            <div class="skills-grid">
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-globe"></i> Web Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">Vanilla JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microsoft SQL Server</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-network-wired"></i> Systems & Networking</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Computer Networks</span>
+                        <span class="skill-tag">Operating Systems</span>
+                        <span class="skill-tag">Information Systems</span>
+                        <span class="skill-tag">Cybersecurity Fundamentals</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-microchip"></i> Additional Domains</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Backend Development</span>
+                        <span class="skill-tag">Data Processing</span>
+                        <span class="skill-tag">AI Fundamentals</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section-padding bg-alt">
+        <div class="container">
+            <h2 class="section-title" data-i18n="sectionProjects">Recent Projects</h2>
+
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all" data-i18n="filterAll">All</button>
+                <button class="filter-btn" data-filter="web" data-i18n="filterWeb">Web Dev</button>
+                <button class="filter-btn" data-filter="database" data-i18n="filterDb">Databases</button>
+                <button class="filter-btn" data-filter="desktop" data-i18n="filterDesktop">Desktop</button>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Project Card 1 -->
+                <div class="project-card" data-category="database">
+                    <div class="project-content">
+                        <div class="project-icon"><i class="fas fa-school"></i></div>
+                        <h3 data-i18n="project1Title">School Management System</h3>
+                        <p data-i18n="project1Desc">A comprehensive system designed to manage students, teachers,
+                            attendance, grades, and
+                            reporting, with a structured database and secure data handling.</p>
+                        <div class="project-tags">
+                            <span>Database</span>
+                            <span>Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card" data-category="desktop">
+                    <div class="project-content">
+                        <div class="project-icon"><i class="fas fa-university"></i></div>
+                        <h3 data-i18n="project2Title">Banking Management System</h3>
+                        <p data-i18n="project2Desc">A simulated banking system featuring account management,
+                            transactions, user roles, and a
+                            strong focus on accuracy and security.</p>
+                        <div class="project-tags">
+                            <span>Finance</span>
+                            <span>Security</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card featured" data-category="web">
+                    <div class="project-content">
+                        <div class="project-icon"><i class="fas fa-globe-americas"></i></div>
+                        <h3 data-i18n="project3Title">University Website</h3>
+                        <p data-i18n="project3Desc">A responsive and user-friendly official website developed for a
+                            university, focusing on
+                            clarity, accessibility, and modern design.</p>
+                        <div class="project-tags">
+                            <span>Web</span>
+                            <span>Responsive</span>
+                        </div>
+                        <a href="https://stunning-basic-partridge-719-1766198654564.stunning-app.com/" target="_blank"
+                            class="project-link"><span data-i18n="project3Link">View Project</span> <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card" data-category="desktop">
+                    <div class="project-content">
+                        <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3 data-i18n="project4Title">Additional Projects</h3>
+                        <p data-i18n="project4Desc">Multiple standalone projects using C++, Desktop applications with
+                            C#, and Web projects
+                            (Approx. 7 total).</p>
+                        <div class="project-tags">
+                            <span>C++</span>
+                            <span>C#</span>
+                            <span>Web</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <h2 class="section-title" data-i18n="sectionServices">My Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-layer-group"></i>
+                    <h3 data-i18n="service1">Full-Stack Web Development</h3>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-code"></i>
+                    <h3 data-i18n="service2">Software & System Development</h3>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-database"></i>
+                    <h3 data-i18n="service3">Database Design & Management</h3>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-tools"></i>
+                    <h3 data-i18n="service4">Technical Consulting & Analysis</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding bg-alt">
+        <div class="container">
+            <h2 class="section-title" data-i18n="sectionContact">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3 data-i18n="contactTitle">Let's work together</h3>
+                    <p data-i18n="contactDesc">Interested in hiring me for a project or professional role? Feel free to
+                        reach out. I am
+                        available for opportunities in freelance or full-time capacities.</p>
+
+                    <div class="contact-detail">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <div class="info">
+                            <span data-i18n="emailLabel">Email</span>
+                            <a href="mailto:qweqweiop57@gmail.com">qweqweiop57@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="icon"><i class="fab fa-github"></i></div>
+                        <div class="info">
+                            <span>GitHub</span>
+                            <a href="https://github.com/altairi57" target="_blank">altairi57</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="icon"><i class="fab fa-youtube"></i></div>
+                        <div class="info">
+                            <span>YouTube</span>
+                            <a href="https://youtube.com/@a7ta25t?si=S0zFIsxyL9B6CrRT" target="_blank">@a7ta25t</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="icon"><i class="fab fa-linkedin"></i></div>
+                        <div class="info">
+                            <span data-i18n="linkedinLabel">LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/abdullah-altairi" target="_blank"
+                                data-i18n="linkedinName">Abdullah altairi</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" required placeholder=" ">
+                            <label for="name" data-i18n="labelName">Your Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required placeholder=" ">
+                            <label for="email" data-i18n="labelEmail">Your Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" required placeholder=" ">
+                            <label for="subject" data-i18n="labelSubject">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message" data-i18n="labelMessage">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-i18n="btnSend">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 altairi. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="#about" data-i18n="navAbout">About</a>
+                    <a href="#projects" data-i18n="navProjects">Projects</a>
+                    <a href="#contact" data-i18n="navContact">Contact</a>
+                    <a href="https://www.linkedin.com/in/abdullah-altairi" target="_blank"
+                        data-i18n="linkedinLabel">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+</body>
+
+</html>

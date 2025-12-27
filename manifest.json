@@ -1,0 +1,31 @@
+{
+  "name": "Abdullah altairi - Full-Stack Software Engineer",
+  "short_name": "altairi Portfolio",
+  "description": "Portfolio of Abdullah altairi - General Software Developer & Full-Stack Engineer specializing in Web, Mobile, Backend, Data, and AI solutions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "profile.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "profile.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ],
+  "categories": [
+    "portfolio",
+    "developer",
+    "technology"
+  ],
+  "lang": "en-US",
+  "dir": "ltr"
+}

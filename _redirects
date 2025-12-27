@@ -1,0 +1,11 @@
+# Redirects for Netlify
+# Single Page Application routing
+
+# Redirect 404 errors to custom 404 page
+/* /404.html 404
+
+# Force HTTPS (optional - Netlify does this automatically)
+# http://* https://:splat 301!
+
+# Redirect old paths (add your custom redirects here)
+# /old-path /new-path 301

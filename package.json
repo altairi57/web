@@ -1,0 +1,21 @@
+{
+    "name": "altairi-portfolio",
+    "version": "1.0.0",
+    "description": "Professional portfolio website for Abdullah altairi - Full-Stack Software Engineer",
+    "main": "index.html",
+    "scripts": {
+        "start": "npx browser-sync start --server --files '*.html, *.css, *.js'"
+    },
+    "author": "Abdullah altairi",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/altairi57/portfolioo.git"
+    },
+    "keywords": [
+        "portfolio",
+        "developer",
+        "full-stack",
+        "abdullah-altairi"
+    ]
+}
