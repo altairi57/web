@@ -725,13 +725,19 @@
     <a href="#" class="back-to-top" id="backToTop" aria-label="Back to Top">
         <i class="fas fa-arrow-up"></i>
     </a>
-<script type="module">
-  // 1. استيراد المكتبات من CDN
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+<!-- ضع زر تسجيل الدخول في المكان المناسب داخل الصفحة -->
+<div style="text-align: center; margin-top: 20px;">
+  <button id="googleBtn" style="background-color: #4285F4; color: white; border: none; padding: 12px 24px; font-size: 16px; border-radius: 5px; cursor: pointer;">
+    تسجيل الدخول باستخدام Google
+  </button>
+  <div id="userInfo" style="margin-top: 15px; font-weight: bold;"></div>
+</div>
 
-  // 2. إعدادات مشروعك
+<!-- كود Firebase Authentication -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
   const firebaseConfig = {
     apiKey: "AIzaSyBETIwbgd028G11qwQDAd1jdQxrgybsqEE",
     authDomain: "myawesomeapp-7c3df.firebaseapp.com",
@@ -742,30 +748,28 @@
     measurementId: "G-GGK59MFPKQ"
   };
 
-  // 3. تهيئة الخدمات
+  // 1. تهيئة التطبيق والتوثيق
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  const db = getFirestore(app);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
 
-  console.log("تم الاتصال بـ Firebase بنجاح!");
+  const googleBtn = document.getElementById('googleBtn');
+  const userInfo = document.getElementById('userInfo');
 
-  // 4. دالة اختبار لإضافة بيانة تجريبية في Firestore
-  async function addTestData() {
-    try {
-      const docRef = await addDoc(collection(db, "testCollection"), {
-        name: "مشروع Web",
-        status: "شغال بنجاح",
-        timestamp: new Date()
+  // 2. حدث الضغط على الزر لفتح نافذة Google
+  googleBtn.addEventListener('click', () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        userInfo.innerHTML = `مرحباً بك: ${user.displayName}`;
+        console.log("تم تسجيل الدخول بنجاح:", user);
+      })
+      .catch((error) => {
+        console.error("حدث خطأ في تسجيل الدخول:", error);
       });
-      console.log("تم حفظ المستند بنجاح برقم ID:", docRef.id);
-    } catch (e) {
-      console.error("حدث خطأ في الحفظ:", e);
-    }
-  }
-
-  // تشغيل دالة الاختبار
-  addTestData();
+  });
 </script>
+
 
     <!-- Scripts -->
     <script src="script.js" defer></script>
