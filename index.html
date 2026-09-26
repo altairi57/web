@@ -726,14 +726,12 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  // 1. استيراد المكتبات من CDN
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  // 2. إعدادات مشروعك
   const firebaseConfig = {
     apiKey: "AIzaSyBETIwbgd028G11qwQDAd1jdQxrgybsqEE",
     authDomain: "myawesomeapp-7c3df.firebaseapp.com",
@@ -744,10 +742,31 @@
     measurementId: "G-GGK59MFPKQ"
   };
 
-  // Initialize Firebase
+  // 3. تهيئة الخدمات
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  console.log("تم الاتصال بـ Firebase بنجاح!");
+
+  // 4. دالة اختبار لإضافة بيانة تجريبية في Firestore
+  async function addTestData() {
+    try {
+      const docRef = await addDoc(collection(db, "testCollection"), {
+        name: "مشروع Web",
+        status: "شغال بنجاح",
+        timestamp: new Date()
+      });
+      console.log("تم حفظ المستند بنجاح برقم ID:", docRef.id);
+    } catch (e) {
+      console.error("حدث خطأ في الحفظ:", e);
+    }
+  }
+
+  // تشغيل دالة الاختبار
+  addTestData();
 </script>
+
     <!-- Scripts -->
     <script src="script.js" defer></script>
 </body>
