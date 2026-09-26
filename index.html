@@ -704,7 +704,34 @@
             </div>
         </div>
     </section>
+<!-- ضع زر تسجيل الدخول في المكان المناسب داخل الصفحة -->
+<!-- قسم التوثيق وعرض بيانات المستخدم -->
+<div id="authContainer" style="text-align: center; margin: 30px auto; font-family: system-ui, -apple-system, sans-serif; max-width: 380px; padding: 15px;">
+  
+  <!-- واجهة زر تسجيل الدخول (تظهر عندما يكون غير مسجل) -->
+  <div id="loginSection">
+    <button id="googleBtn" style="background-color: #4285f4; color: white; border: none; padding: 12px 24px; font-size: 16px; border-radius: 8px; cursor: pointer; font-weight: bold; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+      تسجيل الدخول باستخدام Google 🚀
+    </button>
+  </div>
 
+  <!-- واجهة كارت الحساب (تظهر عند تسجيل الدخول وتستمر عند إغلاق/فتح الموقع) -->
+  <div id="userSection" style="display: none; background: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #eee;">
+    <img id="userPhoto" src="" alt="صورة المستخدم" style="width: 75px; height: 75px; border-radius: 50%; margin-bottom: 10px; border: 3px solid #4285f4; object-fit: cover;">
+    <h3 id="userName" style="margin: 5px 0; color: #222; font-size: 18px;"></h3>
+    <p id="userEmail" style="margin: 5px 0; color: #666; font-size: 13px;"></p>
+    
+    <div id="statusMessage" style="margin-top: 12px; padding: 8px; font-size: 13px; color: #28a745; background: #e8f8ec; border-radius: 6px;">
+      جاري تحميل بياناتك من Firestore...
+    </div>
+
+    <!-- زر تسجيل الخروج -->
+    <button id="logoutBtn" style="background-color: #dc3545; color: white; border: none; padding: 10px 20px; font-size: 14px; border-radius: 6px; cursor: pointer; margin-top: 15px; font-weight: bold; width: 100%;">
+      تسجيل الخروج 🚪
+    </button>
+  </div>
+
+</div>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -725,19 +752,26 @@
     <a href="#" class="back-to-top" id="backToTop" aria-label="Back to Top">
         <i class="fas fa-arrow-up"></i>
     </a>
-<!-- ضع زر تسجيل الدخول في المكان المناسب داخل الصفحة -->
-<div style="text-align: center; margin-top: 20px;">
-  <button id="googleBtn" style="background-color: #4285F4; color: white; border: none; padding: 12px 24px; font-size: 16px; border-radius: 5px; cursor: pointer;">
-    تسجيل الدخول باستخدام Google
-  </button>
-  <div id="userInfo" style="margin-top: 15px; font-weight: bold;"></div>
-</div>
 
-<!-- كود Firebase Authentication -->
+
+<!-- سكريبت التشغيل المتكامل لـ Firebase Auth & Firestore -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-  import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+  import { 
+    getAuth, 
+    GoogleAuthProvider, 
+    signInWithPopup, 
+    signOut, 
+    onAuthStateChanged 
+  } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+  import { 
+    getFirestore, 
+    doc, 
+    setDoc, 
+    getDoc 
+  } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
+  // إعدادات المشروع الخاصة بك
   const firebaseConfig = {
     apiKey: "AIzaSyBETIwbgd028G11qwQDAd1jdQxrgybsqEE",
     authDomain: "myawesomeapp-7c3df.firebaseapp.com",
@@ -748,27 +782,78 @@
     measurementId: "G-GGK59MFPKQ"
   };
 
-  // 1. تهيئة التطبيق والتوثيق
+  // 1. تهيئة الخدمات
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
+  const db = getFirestore(app);
   const provider = new GoogleAuthProvider();
 
+  // عناصر HTML
+  const loginSection = document.getElementById('loginSection');
+  const userSection = document.getElementById('userSection');
   const googleBtn = document.getElementById('googleBtn');
-  const userInfo = document.getElementById('userInfo');
+  const logoutBtn = document.getElementById('logoutBtn');
+  const userName = document.getElementById('userName');
+  const userEmail = document.getElementById('userEmail');
+  const userPhoto = document.getElementById('userPhoto');
+  const statusMessage = document.getElementById('statusMessage');
 
-  // 2. حدث الضغط على الزر لفتح نافذة Google
+  // 2. مراقب الجلسة واسترجاع البيانات الذكي
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      // إخفاء زر تسجيل الدخول وإظهار كارت معلومات الحساب
+      loginSection.style.display = 'none';
+      userSection.style.display = 'block';
+
+      // تعبئة بيانات البروفايل
+      userName.textContent = user.displayName || "مستخدم Google";
+      userEmail.textContent = user.email || "";
+      userPhoto.src = user.photoURL || "https://via.placeholder.com/75";
+
+      try {
+        // حفظ أو تحديث بيانات المستخدم المحددة باسم (user.uid)
+        const userDocRef = doc(db, "users", user.uid);
+        await setDoc(userDocRef, {
+          name: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+          lastLogin: new Date()
+        }, { merge: true });
+
+        // قراءة البيانات من Firestore لتأكيد الاسترجاع
+        const userSnap = await getDoc(userDocRef);
+        if (userSnap.exists()) {
+          statusMessage.textContent = "تم استرجاع وحفظ بياناتك المحفوظة بنجاح ✅";
+        }
+      } catch (error) {
+        console.error("خطأ في قاعدة البيانات:", error);
+        statusMessage.textContent = "حدث خطأ أثناء تحميل البيانات ❌";
+        statusMessage.style.color = "#dc3545";
+        statusMessage.style.background = "#f8d7da";
+      }
+
+    } else {
+      // إذا كان المستخدم غير مسجل أو قام بتسجيل الخروج
+      loginSection.style.display = 'block';
+      userSection.style.display = 'none';
+    }
+  });
+
+  // 3. حدث الضغط على زر تسجيل الدخول
   googleBtn.addEventListener('click', () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
-        userInfo.innerHTML = `مرحباً بك: ${user.displayName}`;
-        console.log("تم تسجيل الدخول بنجاح:", user);
-      })
-      .catch((error) => {
-        console.error("حدث خطأ في تسجيل الدخول:", error);
-      });
+    signInWithPopup(auth, provider).catch((error) => {
+      console.error("خطأ في تسجيل الدخول:", error);
+    });
+  });
+
+  // 4. حدث الضغط على زر تسجيل الخروج
+  logoutBtn.addEventListener('click', () => {
+    signOut(auth).catch((error) => {
+      console.error("خطأ في تسجيل الخروج:", error);
+    });
   });
 </script>
+
 
 
     <!-- Scripts -->
